@@ -1,0 +1,81 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #ADD8E6;
+}
+
+.header {
+  background-color: #ff8000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 20px;
+  position: relative;
+}
+
+.header h2 {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
+  font-size: 30px;
+  color: white;
+}
+
+.header img.logo {
+  height: 50px;
+  margin-right: 20px;
+}
+
+.header nav {
+  flex-grow: 1;
+}
+
+.header nav a {
+  color: white;
+  text-decoration: none;
+  margin-right: 20px;
+  font-weight: bold;
+}
+
+.header .user {
+  display: flex;
+  align-items: center;
+}
+
+.user button {
+  background-color: white;
+  color: #ff8000;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.user button:hover {
+  background-color: #ffe0cc;
+  color: #cc6600;
+}
+
+.bus-gallery {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin: 20px;
+}
+
+.bus-gallery img {
+  height: 250px;
+  border-radius: 5px;
+}
+
+.footer {
+  background-color: #ADD8E6;
+  text-align: center;
+  padding: 15px;
+  font-size: 14px;
+}

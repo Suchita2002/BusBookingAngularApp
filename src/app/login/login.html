@@ -1,0 +1,21 @@
+<header>
+  <h1>MSRTC Bus Reservation</h1>
+</header>
+
+<div class="container">
+  <h2>Login</h2>
+
+  <!-- Inputs -->
+  <input id="username" type="email" [(ngModel)]="username" placeholder="Email" />
+  <input id="password" type="password" [(ngModel)]="password" placeholder="Password" />
+
+  <!-- Display error -->
+  <div class="error" *ngIf="errorMsg">{{ errorMsg }}</div>
+
+  <!-- Buttons -->
+  <button id="login" (click)="login()">Login</button>
+  <button id="register" (click)="register()">Register here</button>
+</div>
+<div class="footer">
+  © 2025 Maharashtra State Road Transport Corporation (MSRTC)
+</div>
