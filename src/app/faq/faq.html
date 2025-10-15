@@ -1,0 +1,10 @@
+<app-header></app-header>
+
+<div class="faq-container">
+  <h2>Frequently Asked Questions</h2>
+
+  <div *ngFor="let item of faqList" class="faq-item">
+    <h3>{{ item.question }}</h3>
+    <p>{{ item.answer }}</p>
+  </div>
+</div>

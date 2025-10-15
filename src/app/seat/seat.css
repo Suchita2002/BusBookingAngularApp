@@ -1,0 +1,83 @@
+/* ✅ Seat map grid layout */
+.seat-map {
+  display: grid;
+  grid-template-columns: repeat(4, 50px);
+  gap: 10px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+/* ✅ Each seat style */
+.seat {
+  width: 50px;
+  height: 50px;
+  border-radius: 6px;
+  background-color: #e0e0e0;
+  text-align: center;
+  line-height: 50px;
+  cursor: pointer;
+  font-weight: 600;
+  color: #000; /* 👈 ensure seat numbers are visible */
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+/* ✅ Seat states */
+.seat.booked {
+  background-color: #d32f2f;
+  color: #fff; /* visible text */
+  cursor: not-allowed;
+}
+
+.seat.selected {
+  background-color: #4caf50;
+  color: #fff;
+}
+
+.seat.ladies {
+  background-color: #ffb6c1;
+  color: #333;
+}
+
+/* ✅ Page layout */
+.seat-page {
+  text-align: center;
+  padding: 30px;
+}
+
+/* ✅ Confirm booking button */
+button {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 12px 40px;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 30px;
+  background-color: #ff8000; /* MSRTC orange */
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+  background-color: #e67300;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+}
+
+/* ✅ Container alignment */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}

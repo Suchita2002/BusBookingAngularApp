@@ -1,0 +1,22 @@
+<app-header></app-header>
+
+<div class="seat-page">
+  <header>
+    <h1>Select Bus Seats</h1>
+  </header>
+
+  <div class="container">
+    <div class="seat-map">
+      <div
+        *ngFor="let seat of seats"
+        class="seat"
+        [ngClass]="{ booked: seat.booked, selected: seat.selected, ladies: seat.ladies }"
+        (click)="toggleSeat(seat)"
+      >
+        {{ seat.number }}
+      </div>
+    </div>
+
+    <button (click)="confirmBooking()">Confirm Booking</button>
+  </div>
+</div>

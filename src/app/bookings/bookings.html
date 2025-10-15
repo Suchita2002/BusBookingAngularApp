@@ -1,0 +1,36 @@
+<app-header></app-header>
+
+<div class="bookings-page">
+  <h2>My Bookings</h2>
+
+  <div *ngIf="loading">Loading your bookings...</div>
+  <div *ngIf="error" class="error">{{ error }}</div>
+
+  <div *ngIf="!loading && !error">
+    <section *ngIf="upcomingBookings.length">
+      <h3>Upcoming Trips</h3>
+      <div class="booking-card" *ngFor="let b of upcomingBookings">
+        <strong>{{ b.schedule?.busNumber }}</strong><br>
+        From: {{ b.schedule?.source }} → To: {{ b.schedule?.destination }}<br>
+        Departure: {{ b.schedule?.departureTime | date:'medium' }}<br>
+        Arrival: {{ b.schedule?.arrivalTime | date:'medium' }}<br>
+        Seats: {{ b.seatNumbers }} | Status: {{ b.status }}
+      </div>
+    </section>
+
+    <section *ngIf="completedBookings.length">
+      <h3>Past Trips</h3>
+      <div class="booking-card" *ngFor="let b of completedBookings">
+        <strong>{{ b.schedule?.busNumber }}</strong><br>
+        From: {{ b.schedule?.source }} → To: {{ b.schedule?.destination }}<br>
+        Departure: {{ b.schedule?.departureTime | date:'medium' }}<br>
+        Arrival: {{ b.schedule?.arrivalTime | date:'medium' }}<br>
+        Seats: {{ b.seatNumbers }} | Status: {{ b.status }}
+      </div>
+    </section>
+
+    <div *ngIf="!upcomingBookings.length && !completedBookings.length">
+      You have no bookings yet.
+    </div>
+  </div>
+</div>

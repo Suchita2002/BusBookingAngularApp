@@ -1,0 +1,28 @@
+<app-header></app-header>
+
+<div class="container">
+  <h2>Confirm Your Booking</h2>
+
+  <label>Route:</label>
+  <p class="info">{{ selectedBus?.source }} → {{ selectedBus?.destination }}</p>
+
+  <label>Departure Time:</label>
+  <p class="info">{{ selectedBus?.departureTime | date:'short' }}</p>
+
+  <label>Fare:</label>
+  <p class="info">₹{{ selectedBus?.fare }}</p>
+
+  <label>Date:</label>
+  <p class="info">{{ selectedDate }}</p>
+
+  <label>Seats:</label>
+  <p class="info">{{ selectedSeats.join(', ') }}</p>
+
+  <label>Full Name:</label>
+  <input type="text" [(ngModel)]="fullName" placeholder="Enter your name" />
+
+  <label>Phone Number:</label>
+  <input type="text" [(ngModel)]="phone" placeholder="Enter your phone number" />
+
+  <button (click)="bookNow()">Book Now</button>
+</div>

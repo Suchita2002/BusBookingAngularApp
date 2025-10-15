@@ -1,0 +1,49 @@
+<div class="header">
+  <h2>Admin Panel</h2>
+  <nav>
+    <a routerLink="add-bus" routerLinkActive="active">➕ Add Bus</a>
+    <a routerLink="add-route" routerLinkActive="active">➕ Add Route</a>
+    <a routerLink="add-schedule" routerLinkActive="active">➕ Add Schedule</a>
+    <a routerLink="bus-list" routerLinkActive="active">🚌 View Buses</a>
+    <a routerLink="routes" routerLinkActive="active">🛣️ View Routes</a>
+    <a routerLink="schedules" routerLinkActive="active">📅 View Schedules</a>
+  </nav>
+
+  <div class="user">
+    <button id="logout" (click)="logout()">Logout</button>
+  </div>
+</div>
+
+<div class="content">
+  <h3>All Bookings</h3>
+
+  <div *ngFor="let group of groupedBookings" class="schedule-group">
+    <h4>
+      Bus: {{ group.scheduleInfo.busNumber }} |
+      From: {{ group.scheduleInfo.source }} → To: {{ group.scheduleInfo.destination }} |
+      Departure: {{ group.scheduleInfo.departureTime | date:'short' }} |
+      Arrival: {{ group.scheduleInfo.arrivalTime | date:'short' }}
+    </h4>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Passenger</th>
+          <th>Seat Numbers</th>
+          <th>Status</th>
+          <th>Booking Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let booking of group.bookings">
+          <td>{{ booking.userName }}</td>
+          <td>{{ booking.seatNumbers }}</td>
+          <td>{{ booking.status }}</td>
+          <td>{{ booking.bookingDate | date:'short' }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <router-outlet></router-outlet>
+</div>

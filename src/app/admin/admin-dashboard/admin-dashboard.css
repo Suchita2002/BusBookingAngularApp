@@ -1,0 +1,114 @@
+/* Header */
+.header {
+  background-color: #ff8000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 25px;
+  position: relative;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  z-index: 10;
+}
+
+.header h2 {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 600;
+  color: white;
+}
+
+.header nav {
+  margin-left: 100px;
+  flex-grow: 1;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.header nav a {
+  color: white;
+  text-decoration: none;
+  margin-right: 20px;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 5px 0;
+  transition: all 0.3s ease;
+}
+
+.header nav a:hover,
+.header nav a.active {
+  border-bottom: 2px solid white;
+}
+
+.header .user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.header .user button {
+  background-color: white;
+  color: #ff8000;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.header .user button:hover {
+  background-color: #ffe0cc;
+  color: #cc6600;
+}
+
+/* Bookings table */
+.schedule-group {
+  margin-bottom: 30px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #ff8000;
+  color: white;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+h4 {
+  margin-bottom: 5px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px;
+  }
+  .header h2 {
+    position: static;
+    transform: none;
+    margin: 10px 0;
+  }
+  .header nav {
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+  }
+  .header nav a {
+    margin-right: 15px;
+    margin-bottom: 5px;
+  }
+}

@@ -28,17 +28,6 @@ body {
   margin-right: 20px;
 }
 
-.header nav {
-  flex-grow: 1;
-}
-
-.header nav a {
-  color: white;
-  text-decoration: none;
-  margin-right: 20px;
-  font-weight: bold;
-}
-
 .header .user {
   display: flex;
   align-items: center;
@@ -78,4 +67,25 @@ body {
   text-align: center;
   padding: 15px;
   font-size: 14px;
+}
+
+.bookings-button {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.bookings-button button {
+  background-color: #ff8000;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.bookings-button button:hover {
+  background-color: #e67300;
 }

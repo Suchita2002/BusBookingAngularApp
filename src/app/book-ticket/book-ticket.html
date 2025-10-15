@@ -1,0 +1,26 @@
+<div class="container">
+  <h2>Book Your Ticket</h2>
+
+  <label for="routeSelect">Selected Route:</label>
+  <select id="routeSelect" [(ngModel)]="selectedBus">
+    <option [value]="selectedBus">{{ selectedBus }}</option>
+  </select>
+
+  <label for="dateSelect">Date:</label>
+  <input type="date" id="dateSelect" [(ngModel)]="selectedDate" />
+
+  <label for="seatSelect">Selected Seats:</label>
+  <select id="seatSelect" multiple>
+    <option *ngFor="let seat of selectedSeats" [value]="seat" selected>
+      Seat {{ seat }}
+    </option>
+  </select>
+
+  <label for="fullName">Full Name:</label>
+  <input id="fullName" type="text" [(ngModel)]="fullName" placeholder="Enter your name" />
+
+  <label for="phone">Phone Number:</label>
+  <input id="phone" type="text" [(ngModel)]="phone" placeholder="Enter your phone number" />
+
+  <button (click)="bookTicket()">Book Now</button>
+</div>

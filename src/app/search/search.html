@@ -1,0 +1,18 @@
+<app-header></app-header>
+
+<div class="container">
+  <h2>Search Buses</h2>
+
+  <input type="text" [(ngModel)]="from" placeholder="From (Source)" />
+  <input type="text" [(ngModel)]="to" placeholder="To (Destination)" />
+  <input type="date" [(ngModel)]="date" />
+  <button (click)="searchBuses()">Check Availability</button>
+
+  <div class="bus-list">
+    <div *ngFor="let schedule of schedules" class="bus-item" (click)="selectBus(schedule)">
+      {{ schedule.source }} → {{ schedule.destination }} | Bus: {{ schedule.busNumber }} |
+      {{ schedule.departureTime | date:'shortTime' }} → {{ schedule.arrivalTime | date:'shortTime' }} |
+      ₹{{ schedule.fare }}
+    </div>
+  </div>
+</div>

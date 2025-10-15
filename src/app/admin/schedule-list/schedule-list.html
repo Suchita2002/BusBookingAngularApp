@@ -1,0 +1,39 @@
+<div class="container">
+  <h3>All Schedules</h3>
+
+  @if (loading) {
+    <p>Loading schedules...</p>
+  } @else if (errorMsg) {
+    <p class="error">{{ errorMsg }}</p>
+  } @else {
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Bus</th>
+          <th>Route</th>
+          <th>Departure</th>
+          <th>Arrival</th>
+          <th>Fare</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (s of schedules; track s.id) {
+          <tr>
+            <td>{{ s.id }}</td>
+            <td>{{ s.busNumber }}</td>
+            <td>{{ s.source }} → {{ s.destination }}</td>
+            <td>{{ formatDateTime(s.departureTime) }}</td>
+            <td>{{ formatDateTime(s.arrivalTime) }}</td>
+            <td>{{ s.fare | number:'1.2-2' }}</td>
+            <td>
+              <button (click)="deleteSchedule(s.id)">Delete</button>
+              <button (click)="editSchedule(s.id)">Update</button>
+            </td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  }
+</div>

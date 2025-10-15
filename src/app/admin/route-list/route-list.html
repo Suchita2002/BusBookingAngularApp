@@ -1,0 +1,35 @@
+<div class="container">
+  <h3>All Routes</h3>
+
+  @if (loading) {
+    <p>Loading routes...</p>
+  } @else if (errorMsg) {
+    <p class="error">{{ errorMsg }}</p>
+  } @else {
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Source</th>
+          <th>Destination</th>
+          <th>Distance (km)</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (route of routes; track route.id) {
+          <tr>
+            <td>{{ route.id }}</td>
+            <td>{{ route.source }}</td>
+            <td>{{ route.destination }}</td>
+            <td>{{ route.distance }}</td>
+            <td>
+              <button (click)="deleteRoute(route.id)">Delete</button>
+              <button (click)="editRoute(route)">Update</button>
+            </td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  }
+</div>

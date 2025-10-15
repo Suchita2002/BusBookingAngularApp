@@ -1,0 +1,13 @@
+.success-card {
+  max-width: 400px;
+  margin: 80px auto;
+  padding: 25px;
+  text-align: center;
+  background: #f9fff9;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.highlight {
+  font-weight: bold;
+  color: #1976d2;
+}

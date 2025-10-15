@@ -1,30 +1,14 @@
-<div class="header">
-  <img class="logo" src="assets/images/Bus.png" alt="Government Logo">
-  <nav>
-    <a routerLink="/home">Home</a>
-    <a routerLink="/faq">FAQ</a>
-    <a routerLink="/contact">Contact Us</a>
-  </nav>
-  <h2>MSRTC Bus Reservation</h2>
-
-  <div class="user">
-    <div class="user-icon"></div>
-
-    <!-- Register/Login button shown only if NOT logged in -->
-    <button *ngIf="!isLoggedIn()" (click)="openLoginPage()">Register / Login</button>
-
-    <!-- Online Booking + Logout buttons shown only if logged in -->
-    <ng-container *ngIf="isLoggedIn()">
-      <button (click)="openBookingPage()">Online Booking</button>
-      <button (click)="logout()">Logout</button>
-    </ng-container>
-  </div>
-</div>
+<app-header></app-header>
 
 <div class="bus-gallery">
   <img src="assets/images/RedBusLOGO.png" alt="Bus 1">
   <img src="assets/images/Stand.png" alt="Bus 4">
   <img src="assets/images/BUS2.png" alt="Bus 3">
+</div>
+
+<!-- ✅ Bookings Button -->
+<div class="bookings-button" *ngIf="isLoggedIn()">
+  <button (click)="openBookingsPage()">My Bookings</button>
 </div>
 
 <div class="footer">

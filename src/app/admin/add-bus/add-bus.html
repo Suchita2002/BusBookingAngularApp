@@ -1,0 +1,21 @@
+<div class="form-container">
+  <h3>Add Bus</h3>
+
+  <form (ngSubmit)="submitForm()">
+    <label for="busNumber">Bus Number</label>
+    <input type="text" id="busNumber" [(ngModel)]="busNumber" name="busNumber" required />
+
+    <label for="busType">Bus Type</label>
+    <input type="text" id="busType" [(ngModel)]="busType" name="busType" required />
+
+    <label for="capacity">Capacity</label>
+    <input type="number" id="capacity" [(ngModel)]="capacity" name="capacity" required />
+
+    <div class="actions">
+      <button type="submit">Add Bus</button>
+    </div>
+
+    <p class="success" *ngIf="successMsg">{{ successMsg }}</p>
+    <p class="error" *ngIf="errorMsg">{{ errorMsg }}</p>
+  </form>
+</div>

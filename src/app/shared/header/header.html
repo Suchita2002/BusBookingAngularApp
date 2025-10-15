@@ -1,0 +1,25 @@
+<div class="header">
+  <div class="header-left">
+    <img class="logo" src="assets/images/Bus.png" alt="Government Logo">
+
+    <nav>
+  <a [routerLink]="['/home']">Home</a>
+  <a [routerLink]="['/faq']" routerLinkActive="active">FAQ</a>
+  <a [routerLink]="['/contact']" routerLinkActive="active">Contact Us</a>
+</nav>
+
+  </div>
+
+  <h2>MSRTC Bus Reservation</h2>
+
+  <div class="user">
+    <div class="user-icon"></div>
+
+    <button *ngIf="!isLoggedIn()" (click)="openLoginPage()">Register / Login</button>
+
+    <ng-container *ngIf="isLoggedIn()">
+      <button (click)="openBookingPage()">Online Booking</button>
+      <button (click)="logout()">Logout</button>
+    </ng-container>
+  </div>
+</div>

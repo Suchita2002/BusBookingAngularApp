@@ -1,0 +1,34 @@
+<div class="form-container">
+  <h3>Add Schedule</h3>
+
+  <form #scheduleForm="ngForm" (ngSubmit)="submitForm(scheduleForm)">
+    <label for="busId">Bus ID</label>
+    <input type="number" id="busId" [(ngModel)]="busId" name="busId" required />
+
+    <label for="routeId">Route ID</label>
+    <input type="number" id="routeId" [(ngModel)]="routeId" name="routeId" required />
+
+    <label for="departureTime">Departure Time</label>
+    <input type="datetime-local" id="departureTime" [(ngModel)]="departureTime" name="departureTime" required />
+
+    <label for="arrivalTime">Arrival Time</label>
+    <input type="datetime-local" id="arrivalTime" [(ngModel)]="arrivalTime" name="arrivalTime" required />
+
+    <label for="fare">Fare</label>
+    <input type="number" id="fare" [(ngModel)]="fare" name="fare" required min="0" step="0.01" />
+
+    <label for="recurrence">Repeat</label>
+    <select id="recurrence" [(ngModel)]="recurrence" name="recurrence" required>
+      <option value="NONE">None</option>
+      <option value="DAILY">Daily</option>
+      <option value="WEEKLY">Weekly</option>
+    </select>
+
+    <div class="actions">
+      <button type="submit">Add Schedule</button>
+    </div>
+
+    <p class="success" *ngIf="successMsg">{{ successMsg }}</p>
+    <p class="error" *ngIf="errorMsg">{{ errorMsg }}</p>
+  </form>
+</div>

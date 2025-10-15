@@ -1,0 +1,35 @@
+<div class="container">
+  <h3>All Buses</h3>
+
+  @if (loading) {
+    <p>Loading buses...</p>
+  } @else if (errorMsg) {
+    <p class="error">{{ errorMsg }}</p>
+  } @else {
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Bus Number</th>
+          <th>Type</th>
+          <th>Capacity</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (bus of buses; track bus.id) {
+          <tr>
+            <td>{{ bus.id }}</td>
+            <td>{{ bus.busNumber }}</td>
+            <td>{{ bus.type }}</td>
+            <td>{{ bus.totalSeats }}</td>
+            <td>
+              <button (click)="deleteBus(bus.id)">Delete</button>
+              <button (click)="editBus(bus)">Update</button>
+            </td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  }
+</div>
